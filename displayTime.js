@@ -28,7 +28,7 @@ $(document).ready(function() {
 	setInterval(function() {
 		now = moment();
 		
-		$('#local').text('Local - ' + moment.tz(now, localTZ).format('MMMM Do YYYY, h:mm:ss a z'));
+		$('#local').text('Local - ' + moment.tz(now, localTZ).format('MMMM Do YYYY, HH:mm:ss a z'));
 		
 		utc = getFormattedDOYTime(now, 'Etc/UTC');
 		canberra = getFormattedDOYTime(now, 'Australia/Sydney');
