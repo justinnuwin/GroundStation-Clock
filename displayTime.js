@@ -23,9 +23,12 @@ $(document).ready(function() {
 	]);
 	
 	var now, utc, canberra, goldstone, madrid;
+	var localTZ = moment.tz.guess();
 	
 	setInterval(function() {
-		now = moment().utc();
+		now = moment();
+		
+		$('#local').text('Local - ' + moment.tz(now, localTZ).format('MMMM Do YYYY, h:mm:ss a z'));
 		
 		utc = getFormattedDOYTime(now, 'Etc/UTC');
 		canberra = getFormattedDOYTime(now, 'Australia/Sydney');
@@ -49,7 +52,7 @@ $(document).ready(function() {
 		$('#kauai .timezone').text(kauai[1]);
 		$('#purdue .doytime').text("DOY" + purdue[0]);
 		$('#purdue .timezone').text(purdue[1]);
-	}, 500);
+	}, 250);
 
 	
 	function getFormattedDOYTime(now, timeZoneStr) {
