@@ -1,0 +1,56 @@
+<html>
+
+<head>
+
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="moment.js"></script>
+
+	<style>
+	h1, p {
+		color: #fff;
+		font-family: 'Helvetica';
+	}
+	
+	body {
+		background-color: #000;
+	}
+	
+	.datetime {
+		display: inline-block;
+	}
+	
+	.timezone {
+		display: inline-block;
+	}
+	
+	</style>
+	
+</head>
+
+
+<body
+
+	<div id='app'>
+		<div class="center">
+			<h1 id="utc" class="datetime"></h1>
+			<p class="timezone">&nbsp;UTC</p>
+		</div>
+		
+		<div
+	
+	</div>
+
+</body>
+
+
+	<script>
+	
+	
+	setInterval(function() {
+		var now = moment().format('DDDD hh:mm:ss');
+		$('#utc').text("DOY" + now);
+	}, 500);
+
+	</script>
+
+</html>
