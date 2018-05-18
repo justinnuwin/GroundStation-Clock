@@ -1,69 +1,69 @@
+<!DOCTYPE HTML>
 <html>
 
 <head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Clock for Ground Operations">
+	<meta name="author" content="Justin Nguyen (inspired by MGSS at JPL)">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="reset.css"/>
+	<link rel="stylesheet" href="styles.css"/>
 
-	<script src="jquery-3.3.1.min.js"></script>
-	<script src="moment.js"></script>
-
-	<style>
-	h1 {
-		font-size: 10vh;
-		color: #fff;
-		font-family: 'Helvetica';
-	}
-	
-	p {
-		color: #fff;
-		font-family: 'Helvetica';
-	}
-	
-	body {
-		background-color: #000;
-	}
-	
-	.center {
-		text-align: center;
-	}	
-	
-	.datetime {
-		display: inline-block;
-	}
-	
-	.timezone {
-		display: inline-block;
-	}
-	
-	</style>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="moment.js"></script>
+	<script type="text/javascript" src="moment-timezone.js"></script>
+	<script type="text/javascript" src="displayTime.js"></script>
 	
 </head>
 
 
-<body
+<body>
 
 	<div id='app'>
-		<div class="center">
-			<h1 id="utc" class="datetime"></h1>
-			<p class="timezone">&nbsp;UTC</p>
+		<div id="utc" class="center">
+			<h1 class="doytime"></h1>
+			<p class="timezone"></p>
 		</div>
 		
-		<div class="3-col">
-			<h1 id="canberra" class="datetime"></h1>
-			<p class="timezone">&nbsp;C
+		<div id="canberra" class="col-3">
+			<h2 class="doytime"></h2>
+			<p class="timezone"></p>
+			<h3>DSN - Canberra</h3>
 		</div>
-	
+		
+		<div id="goldstone" class="col-3">
+			<h2 class="doytime"></h2>
+			<p class="timezone"></p>
+			<h3>DSN - Goldstone</h3>
+		</div>
+		
+		<div id="madrid" class="col-3">
+			<h2 class="doytime"></h2>
+			<p class="timezone"></p>
+			<h3>DSN - Madrid</h3>
+		</div>
+		
+		<div id="asu" class="col-3">
+			<h2 class="doytime"></h2>
+			<p class="timezone"></p>
+			<h3>SatNet - Arizona State</h3>
+		</div>
+		
+		<div id="kauai" class="col-3">
+			<h2 class="doytime"></h2>
+			<p class="timezone"></p>
+			<h3>SatNet - Kauai CC</h3>
+		</div>
+		
+		<div id="purdue" class="col-3">
+			<h2 class="doytime"></h2>
+			<p class="timezone"></p>
+			<h3>Satnet - Purdue</h3>
+		</div>
 	</div>
 
 </body>
 
-
-	<script>
-	
-	
-	setInterval(function() {
-		var now = moment().format('DDDD hh:mm:ss');
-		$('#utc').text("DOY" + now);
-	}, 500);
-
-	</script>
 
 </html>
